@@ -52,12 +52,12 @@ Achieve: The user unlocks cosmetic "Titles" and "Mascot" rewards from the Local 
 The six stats are unified attributes. Action in one domain builds the stat across all domains.
 |Stat|Domain Manifestations (Physical / Mental / Social)|
 |:-|:-|
-|Strength|Assertive Action / Decisiveness / Social Authority
-|Dexterity|Coordination / Problem-Solving / Social Finesse
-|Constitution|Durability / Persistence / Social Resilience
-|Intelligence|Body Optimization / Systemization / Social Strategy
-|Wisdom|Awareness / Long-Term Judgment / Empathy
-|Charisma|Expressive Presence / Persuasion / Group Magnetism
+|Strength|Assertive Action / Decisiveness / Social Authority|
+|Dexterity|Coordination / Problem-Solving / Social Finesse|
+|Constitution|Durability / Persistence / Social Resilience|
+|Intelligence|Body Optimization / Systemization / Social Strategy|
+|Wisdom|Awareness / Long-Term Judgment / Empathy|
+|Charisma|Expressive Presence / Persuasion / Group Magnetism|
 
 ### 3.2. The XP & Leveling Algorithm
 
@@ -79,46 +79,77 @@ Leveling Curve: Standard exponential RPG curve. Levels become progressively hard
 
 ### 3.3. The Local Victory Circuit (LVC)
 A system of purely symbolic, celebratory rewards for key milestones.
+
 The "First Step" Bonus: A massive XP multiplier for the first time any activity is logged.
+
 The "Streak" Reward: Visual flair (e.g., a flame icon) for logging the same activity 3+ days in a row.
+
 The "Mascot" Event: At set milestones (e.g., every 10th gym trip), a whimsical, stat-appropriate character (e.g., a "Strength Goblin") appears with a celebratory animation.
-4. User Interface (UI) & User Experience (UX)
-4.1. Visual Aesthetic
+
+## 4. User Interface (UI) & User Experience (UX)
+
+### 4.1. Visual Aesthetic
+
 Theme: "Digital Vellum." Clean, high-contrast, legible, but with the tactile warmth and satisfying feel of a paper character sheet.
-4.2. Screen Architecture (Solo MVP)
-Screen A: The Character Sheet (Home)
+
+### 4.2. Screen Architecture (Solo MVP)
+
+#### Screen A: The Character Sheet (Home)
+
 Top: Character Name, Total Level, Global XP Bar.
+
 Center (The Grid): Six large, prominent, clickable Stat Boxes.
+
 Inside the Box: Stat Name (STR), Current Score (14), Modifier (+2).
+
 Bottom (The Nav Bar):
 [Journal] (Book Icon)
 [LOG ACTIVITY] (Large, Central "+" Icon)
 [Settings] (Gear Icon)
-Screen B: Log Activity
+
+#### Screen B: Log Activity
+
 A clean, searchable catalog of activities.
+
 Simple inputs for duration, notes.
+
 Checkboxes for "With a Group?" and "Music Playing?"
+
 A large, satisfying "Log It" button that triggers the reward animation.
-Screen C: The Journal (The Record & The Insight)
+
+#### Screen C: The Journal (The Record & The Insight)
+
 A chronological feed of past logs ("On this day, you gained 400 XP in Charisma.").
+
 A gallery of all unlocked Titles and LVC rewards.
+
 The Stat Detail View: Tapping a stat box on the home screen brings you here. It shows the total XP for that stat, broken down by its Physical, Mental, and Social sources, revealing the Transference effect.
-5. Technical Architecture
-5.1. Stack
+
+## 5. Technical Architecture
+
+### 5.1. Stack
 Type: Progressive Web App (PWA).
 Core: Static HTML/CSS/JS. Lightweight framework (e.g., Svelte) for state management.
 Hosting: Static hosting (GitHub Pages, Netlify). Goal: Zero server maintenance.
-5.2. Data Management
+
+### 5.2. Data Management
 Primary Storage: localStorage / IndexedDB in the user's browser. The data lives on the device.
 Backup/Sync (v1.1): OAuth 2.0 with Google Drive API. The app will have permission to read/write a single, user-owned save file (chimera_save.json) in the user's own cloud storage. No central database.
-6. Roadmap
+
+## 6. Roadmap
+
 Phase 1: The Sovereign Journey (MVP)
+
 Goal: A functional, offline-capable PWA for a single user.
 Features: The six unified stats, core activity logging, solo-focused LVCs, local storage.
 Success Metric: It is a genuinely useful and joyful tool for one person (you).
+
 Phase 2: The Resilient Self (v1.1)
+
 Goal: Data permanence and portability.
 Features: Google Drive integration for secure, user-owned data backup and sync.
+
 Phase 3: The Fellowship (v2.0 - The Future)
+
 Goal: To incentivize and reward collective action.
 Features: A "Party" system. Activation of the Social XP Multiplier. A simple, trust-based system for confirming group activities.
